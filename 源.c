@@ -1,108 +1,135 @@
 #define _CRT_SECURE_NO_WARNINGS
-//#include<stdio.h>
+//#include <stdio.h>
+//#include <math.h>
 //int main()
 //{
-//putchar(73);
-//putchar(32);
-//putchar(99);
-//putchar(97);
-//putchar(110);
-//putchar(32);
-//putchar(100);
-//putchar(111);
-//putchar(32);
-//putchar(105);
-//putchar(116);
-//putchar(33);
-//	return 0;
-//}
-
- 
-//#include<stdio.h>
-//int main()
-//{
-//	int arr[] = { 73,32,99,97,110,32,100,111,32,105,116,33 };
-//	int sz = sizeof(arr) / sizeof(arr[0]);	//计算数组的元素个数
-//	for (int i = 0; i < sz; i++)
+//	int a, b, c;
+//	float s, p;
+//	scanf_s("%d %d %d", &a, &b, &c);
+//	if ((a + b > c) && (b + c > a) && (a + c > b))
 //	{
-//		printf("%c", arr[i]);
+//		p = (float)(a + b + c) / 2;
+//		s = sqrt(p * (p - a) * (p - b) * (p - c));
+//		printf("%.2f %.2f", s, p * 2);
 //	}
-//	char arr1[] = "abbskcaj";
-//	printf("%d", strlen(arr1));
+//	else
+//		printf("Not a Valid Triangle\n");
 //	return 0;
 //}
 
-
-//出生生日的输入输出
+//
+////加油站服务
 //#include<stdio.h>
 //int main()
 //{
-//	int year, month, day;
-//	scanf("%4d%2d%2d", &year, &month, &day);	//scanf("xx%")中xx限制输入位数
-//	printf("%d\n%02d\n%02d\n", year, month, day);
-//	return 0;
+//    int n, t;
+//    float money;
+//    char s;
+//    scanf("%d %d %c", &n, &t, &s);
+//    if (t == 89)
+//        money = 6.17f;
+//    else if (t == 92)
+//        money = 5.58f;
+//    else if (t == 95)
+//        money = 5.96f;
+//    if (s == 'a')
+//        printf("%.2f", money * n * 0.95);
+//    if (s == 'h')
+//        printf("%.2f", money * n * 0.98);
+//    return 0;
 //}
 
-//printf函数的返回值
+//成绩评估
 //#include<stdio.h>
 //int main()
 //{
-//	//int a = printf("Hello world!");
-//	//printf("\n%d\n", a);
-//	printf("printf(\"Hello World!\\n\");\n");
-//	printf("cout<<\"Hello World!\"<<endi;");
-//	return 0;
+//    int w, c, f, sum;
+//    scanf("%d %d %d", &w, &c, &f);
+//    sum = w + c + f;
+//    if (sum <= 300 && sum >= 285)
+//        printf("Gold Medal");
+//    else if (sum < 285 && sum >= 270)
+//        printf("Silver Medal");
+//    else if (sum < 270 && sum >= 240)
+//        printf("Bronze Medal");
+//    if(sum < 240)
+//    {
+//        if(w >= 95 || c >= 95 || f >= 95)
+//            printf("Honor Medal");
+//        else
+//            printf("No Medal");
+//    }
+//    return 0;
 //}
-// 
-//比较4个数的最大值
+
+
+
 //#include<stdio.h>
 //int main()
 //{
-//	int arr[4] = { 0 };
-//	for (int i = 0; i < 4; i++)
-//	{
-//		scanf("%d", &arr[i]);
-//	}
-//	int i = 0;
-//	int a = 0;
-//	while (i < 3)
-//	{
-//		a = arr[i] < arr[i + 1] ? arr[i + 1] : arr[i];
-//		i++;
-//	}
-//	printf("%d", a);
-//	return 0;
+//    int w, c, f, sum;
+//    scanf("%d %d %d", &w, &c, &f);
+//    sum = w + c + f;
+//    if (sum <= 300 && sum >= 285)
+//        printf("Gold Medal");
+//    else if (sum < 285 && sum >= 270)
+//        printf("Silver Medal");
+//    else if (sum < 270 && sum >= 240)
+//        printf("Bronze Medal");
+//    if (sum < 240)
+//    {
+//        if (w >= 95 || c >= 95 || f >= 95)
+//            printf("Honor Medal");
+//        else
+//            printf("No Medal");
+//    }
+//    return 0;
+//}
+
+
+
+
+//#include<stdio.h>
+//int main()
+//{
+//    int a, b, c;
+//    scanf("%d %d %d", &a, &b, &c);
+//        if ((a + b > c) && (b + c > a) && (a + c > b))
+//        {
+//            if (a == b && b == c)
+//                printf("Equilateral Triangle");
+//            else if ((a == b && a != c) || (a == c && a != b) || (c == b && a != c))
+//                printf("Isosceles Triangle");
+//            else
+//                printf("Scalene Triangle");
+//        }
+//        else
+//            printf("No Triangle");
+//    return 0;
 //}
 
 //#include<stdio.h>
 //int main()
 //{
-//	int max = 0;
-//	scanf("%d", &max);
-//	int i = 0;
-//	while (i < 3)
-//	{
-//		int n = 0;
-//		scanf("%d",&n);
-//		if (n > max)
-//		{
-//			max = n;
-//		}
-//		i++;
-//	}
-//	printf("%d", max);
-//	return 0;
+//    int a = getchar();
+//    if ((a >= 65 && a <= 90) || (a <= 122 && a >= 97))
+//        printf("Letter");
+//    else if (a >= 48 && a <= 57)
+//        printf("Digit");
+//    else
+//        printf("Other");
+//    return 0;
 //}
-
 
 #include<stdio.h>
 int main()
 {
-	int kilo, h;
-	scanf("%d %d", &kilo, &h);
-	double l = h * 0.01;
-	double BMI = (kilo / (l * l));
-	printf("%.2lf", BMI);
-	return 0;
+    double w, p;
+    scanf("%lf", &w);
+    if (w <= 2)
+        p = 7.5;
+    else
+        p = (w - 2) * 1.8 + 7.5;
+    printf("%.1lf", p);
+    return 0;
 }
-
