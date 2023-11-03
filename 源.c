@@ -1,135 +1,203 @@
 #define _CRT_SECURE_NO_WARNINGS
-//#include <stdio.h>
-//#include <math.h>
+//#include<stdio.h>
 //int main()
 //{
-//	int a, b, c;
-//	float s, p;
-//	scanf_s("%d %d %d", &a, &b, &c);
-//	if ((a + b > c) && (b + c > a) && (a + c > b))
+//    float score = 0.0f;
+//    scanf("%f", &score);
+//    int c = score / 10;
+//    switch (c)
+//    {
+//    case 10:
+//    case 9:
+//        printf("Excellent");
+//        break;
+//    case 8:
+//        printf("Good");
+//        break;
+//    case 7:
+//        printf("Medium");
+//        break;
+//    case 6:
+//        printf("Pass");
+//        break;
+//    default:
+//        printf("No Pass");
+//    }
+//        return 0;
+//}
+    
+
+//#include<stdio.h>
+//int main()
+//{
+//    int year = 0, month = 0;
+//    scanf("%d %d", &year, &month);
+//
+//
+//    switch (month)
+//    {
+//    case 1:
+//        printf("Days of the month is 31");
+//        break;
+//    case 2:
+//        if (year % 4 == 0)
+//        {
+//            if ((year % 100) == 0 && (year % 400 == 0))
+//                printf("Days of the month is 29");
+//            else if ((year % 400 != 0) && (year % 100 == 0))
+//                printf("Days of the month is 28");
+//            else
+//                printf("Days of the month is 29");
+//        }
+//        else
+//            printf("Days of the month is 28");
+//        break;
+//    case 3:
+//        printf("Days of the month is 31");
+//        break;
+//    case 4:
+//        printf("Days of the month is 30");
+//        break;
+//    case 5:
+//        printf("Days of the month is 31");
+//        break;
+//    case 6:
+//        printf("Days of the month is 30");
+//        break;
+//    case 7:
+//        printf("Days of the month is 31");
+//        break;
+//    case 8:
+//        printf("Days of the month is 31");
+//        break;
+//    case 9:
+//        printf("Days of the month is 30");
+//        break;
+//    case 10:
+//        printf("Days of the month is 31");
+//        break;
+//    case 11:
+//        printf("Days of the month is 30");
+//        break;
+//    case 12:
+//        printf("Days of the month is 31");
+//        break;
+//    }
+//    return 0;
+//}
+
+//#include <stdio.h>
+//int main()
+//{
+//	double e, t;
+//	int i, j, n;
+//	scanf("%d", &n);
+//	e = 1;
+//	t = 1;
+//	for (i = 1; i <= n; i++)
 //	{
-//		p = (float)(a + b + c) / 2;
-//		s = sqrt(p * (p - a) * (p - b) * (p - c));
-//		printf("%.2f %.2f", s, p * 2);
+//		for (t = 1, j = 1; j <= i; j++)
+//		{
+//			t = t * j;
+//		}
+//		e = e + 1.0 / t;
 //	}
-//	else
-//		printf("Not a Valid Triangle\n");
+//	printf("%.8f", e);
 //	return 0;
 //}
 
+
 //
-////加油站服务
 //#include<stdio.h>
 //int main()
 //{
-//    int n, t;
-//    float money;
-//    char s;
-//    scanf("%d %d %c", &n, &t, &s);
-//    if (t == 89)
-//        money = 6.17f;
-//    else if (t == 92)
-//        money = 5.58f;
-//    else if (t == 95)
-//        money = 5.96f;
-//    if (s == 'a')
-//        printf("%.2f", money * n * 0.95);
-//    if (s == 'h')
-//        printf("%.2f", money * n * 0.98);
-//    return 0;
-//}
-
-//成绩评估
-//#include<stdio.h>
-//int main()
-//{
-//    int w, c, f, sum;
-//    scanf("%d %d %d", &w, &c, &f);
-//    sum = w + c + f;
-//    if (sum <= 300 && sum >= 285)
-//        printf("Gold Medal");
-//    else if (sum < 285 && sum >= 270)
-//        printf("Silver Medal");
-//    else if (sum < 270 && sum >= 240)
-//        printf("Bronze Medal");
-//    if(sum < 240)
+//    int m, n;
+//    int num = 0;
+//    int i = 1;
+//    scanf("%d %d", &m, &n);
+//    if (m == 2)
+//        num += 1;
+//    while (m <= n)
 //    {
-//        if(w >= 95 || c >= 95 || f >= 95)
-//            printf("Honor Medal");
-//        else
-//            printf("No Medal");
-//    }
-//    return 0;
-//}
-
-
-
-//#include<stdio.h>
-//int main()
-//{
-//    int w, c, f, sum;
-//    scanf("%d %d %d", &w, &c, &f);
-//    sum = w + c + f;
-//    if (sum <= 300 && sum >= 285)
-//        printf("Gold Medal");
-//    else if (sum < 285 && sum >= 270)
-//        printf("Silver Medal");
-//    else if (sum < 270 && sum >= 240)
-//        printf("Bronze Medal");
-//    if (sum < 240)
-//    {
-//        if (w >= 95 || c >= 95 || f >= 95)
-//            printf("Honor Medal");
-//        else
-//            printf("No Medal");
-//    }
-//    return 0;
-//}
-
-
-
-
-//#include<stdio.h>
-//int main()
-//{
-//    int a, b, c;
-//    scanf("%d %d %d", &a, &b, &c);
-//        if ((a + b > c) && (b + c > a) && (a + c > b))
+//        for (i = 2; i <= n - 1; i++)
 //        {
-//            if (a == b && b == c)
-//                printf("Equilateral Triangle");
-//            else if ((a == b && a != c) || (a == c && a != b) || (c == b && a != c))
-//                printf("Isosceles Triangle");
+//            if (m % i == 0)
+//            {
+//                m++;
+//                break;
+//            }
 //            else
-//                printf("Scalene Triangle");
+//            {
+//                num++;
+//                m++;
+//                break;
+//            }
+//        }
+//    }
+//    printf("%d", num);
+//    return 0;
+//}
+
+
+//#include<stdio.h>
+//int main()
+//{
+//    int n = 0;
+//    int m = 0;
+//    int num = 0;
+//    scanf("%d %d", &m, &n);
+//    int flag = 1;
+//    for(;m<=n;m++)
+//    { 
+//    for (int i = 2; i <= m - 1; i++)
+//    {
+//        if (m % i == 0)
+//        {
+//            flag = 0;
+//            break;
 //        }
 //        else
-//            printf("No Triangle");
-//    return 0;
-//}
-
-//#include<stdio.h>
-//int main()
-//{
-//    int a = getchar();
-//    if ((a >= 65 && a <= 90) || (a <= 122 && a >= 97))
-//        printf("Letter");
-//    else if (a >= 48 && a <= 57)
-//        printf("Digit");
+//            flag = 1;
+//    }
+//    if (flag == 1)
+//        num++;
 //    else
-//        printf("Other");
+//        continue;
+//    }
+//    printf("%d", num);
 //    return 0;
 //}
 
-#include<stdio.h>
+#include <stdio.h>
+void step(int x)
+{
+    int flag = 1;
+    for (int i = 2; i <= x - 1; i++)
+    {
+        if (x % i == 0)
+        {
+            flag = 0;
+            break;
+        }
+        else
+        {
+            flag = 1;
+            continue;
+        }
+    }
+    if (flag == 0)
+        printf("不是素数");
+    else
+    {
+        printf("是素数");
+    }
+}
+
+
 int main()
 {
-    double w, p;
-    scanf("%lf", &w);
-    if (w <= 2)
-        p = 7.5;
-    else
-        p = (w - 2) * 1.8 + 7.5;
-    printf("%.1lf", p);
+    int n = 0;
+    scanf("%d", &n);
+    step(n);
     return 0;
 }
