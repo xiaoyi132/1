@@ -1,203 +1,144 @@
 #define _CRT_SECURE_NO_WARNINGS
-//#include<stdio.h>
-//int main()
-//{
-//    float score = 0.0f;
-//    scanf("%f", &score);
-//    int c = score / 10;
-//    switch (c)
-//    {
-//    case 10:
-//    case 9:
-//        printf("Excellent");
-//        break;
-//    case 8:
-//        printf("Good");
-//        break;
-//    case 7:
-//        printf("Medium");
-//        break;
-//    case 6:
-//        printf("Pass");
-//        break;
-//    default:
-//        printf("No Pass");
-//    }
-//        return 0;
-//}
-    
+#include<stdio.h>
 
-//#include<stdio.h>
-//int main()
+//寻找数组的数位
+//int _binary_num(int arr[],int k,int sz)
 //{
-//    int year = 0, month = 0;
-//    scanf("%d %d", &year, &month);
-//
-//
-//    switch (month)
-//    {
-//    case 1:
-//        printf("Days of the month is 31");
-//        break;
-//    case 2:
-//        if (year % 4 == 0)
-//        {
-//            if ((year % 100) == 0 && (year % 400 == 0))
-//                printf("Days of the month is 29");
-//            else if ((year % 400 != 0) && (year % 100 == 0))
-//                printf("Days of the month is 28");
-//            else
-//                printf("Days of the month is 29");
-//        }
-//        else
-//            printf("Days of the month is 28");
-//        break;
-//    case 3:
-//        printf("Days of the month is 31");
-//        break;
-//    case 4:
-//        printf("Days of the month is 30");
-//        break;
-//    case 5:
-//        printf("Days of the month is 31");
-//        break;
-//    case 6:
-//        printf("Days of the month is 30");
-//        break;
-//    case 7:
-//        printf("Days of the month is 31");
-//        break;
-//    case 8:
-//        printf("Days of the month is 31");
-//        break;
-//    case 9:
-//        printf("Days of the month is 30");
-//        break;
-//    case 10:
-//        printf("Days of the month is 31");
-//        break;
-//    case 11:
-//        printf("Days of the month is 30");
-//        break;
-//    case 12:
-//        printf("Days of the month is 31");
-//        break;
-//    }
-//    return 0;
-//}
-
-//#include <stdio.h>
-//int main()
-//{
-//	double e, t;
-//	int i, j, n;
-//	scanf("%d", &n);
-//	e = 1;
-//	t = 1;
-//	for (i = 1; i <= n; i++)
+//	int left = 0;
+//	int right = sz - 1;
+//	while (left <= right)
 //	{
-//		for (t = 1, j = 1; j <= i; j++)
+//		int mid = left + (right - left) / 2;
+//		if (arr[mid] == k)
+//			return mid;
+//		else if (arr[mid] < k)
 //		{
-//			t = t * j;
+//			left = mid + 1;
 //		}
-//		e = e + 1.0 / t;
+//		else
+//			right = mid - 1;
 //	}
-//	printf("%.8f", e);
+//	return -1;
+//}
+//int main()
+//{
+//	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	int k = 0;
+//	scanf("%d", &k);
+//	int ret = _binary_num(arr, k, sz);
+//	if (ret == -1)
+//		printf("找不到");
+//	else
+//		printf("找到了,是数组的第%d位数", ret);
 //	return 0;
 //}
 
 
-//
+
+
+//斐波那契数列 1
 //#include<stdio.h>
 //int main()
 //{
-//    int m, n;
-//    int num = 0;
-//    int i = 1;
-//    scanf("%d %d", &m, &n);
-//    if (m == 2)
-//        num += 1;
-//    while (m <= n)
-//    {
-//        for (i = 2; i <= n - 1; i++)
-//        {
-//            if (m % i == 0)
-//            {
-//                m++;
-//                break;
-//            }
-//            else
-//            {
-//                num++;
-//                m++;
-//                break;
-//            }
-//        }
-//    }
-//    printf("%d", num);
-//    return 0;
-//}
-
-
-//#include<stdio.h>
-//int main()
-//{
+//    int n1 = 1;
+//    int n2 = 1;
 //    int n = 0;
-//    int m = 0;
-//    int num = 0;
-//    scanf("%d %d", &m, &n);
-//    int flag = 1;
-//    for(;m<=n;m++)
-//    { 
-//    for (int i = 2; i <= m - 1; i++)
+//    int s = 0;
+//    scanf("%d", &n);
+//    for (int i = 1; i <= n - 2; i++)
 //    {
-//        if (m % i == 0)
-//        {
-//            flag = 0;
-//            break;
-//        }
-//        else
-//            flag = 1;
+//        s = n1 + n2;
+//        n1 = n2;
+//        n2 = s;
 //    }
-//    if (flag == 1)
-//        num++;
-//    else
-//        continue;
-//    }
-//    printf("%d", num);
+//    printf("%d", s);
 //    return 0;
 //}
 
-#include <stdio.h>
-void step(int x)
-{
-    int flag = 1;
-    for (int i = 2; i <= x - 1; i++)
-    {
-        if (x % i == 0)
-        {
-            flag = 0;
-            break;
-        }
-        else
-        {
-            flag = 1;
-            continue;
-        }
-    }
-    if (flag == 0)
-        printf("不是素数");
-    else
-    {
-        printf("是素数");
-    }
-}
+//求数列2/1	,  3/2	,5/3....的前n项和
+//#include<stdio.h>
+//int main()
+//{
+//	int arr[3] = { 1,1,2 };
+//	int s = 1;
+//	int n = 0;
+//	double sum = 2.0;
+//	scanf("%d", &n);
+//	for (int i = 1; i <= n - 1; i++)
+//	{ 
+//		s = arr[2];
+//		arr[2] = arr[1] + arr[2];
+//		arr[0] = arr[1];
+//		arr[1] = s;
+//		int down = arr[1];
+//		int up = arr[2];
+//		double x = (double)up / down;
+//		sum = sum + x;
+//	}
+//	printf("%lf", sum);
+//	return 0;
+//}
+//#include<stdio.h>
+//int main()
+//{
+//    int sum = 0;
+//    int n = 0;
+//    scanf("%d", &n);
+//    for (int i = 1; i <= n; i++)
+//    {
+//        if ((i % 3 == 0) && (i % 7 != 0))
+//            sum = sum + i;
+//    }
+//    printf("%d", sum);
+//    return 0;
+//}
+
+//#include<stdio.h>
+//#include<math.h>
+//Fact(int n)
+//{
+//    int s = 1;
+//    for (int x = 1; x <= n; x++)
+//    {
+//        s = 1;
+//        for (int i = 1; i <= x; i++)
+//        {
+//            s = s * i;
+//        }
+//    }
+//    return s;
+//}
+//int main()
+//{
+//    int n = 0, s = 0;
+//    scanf("%d", &n);
+//    for (int i = 1; i <= n; i++)
+//    {
+//        s = s + Fact(i) * pow(-1,i+1);
+//    }
+//    printf("%d", s);
+//    return 0;
+//}
 
 
+#include<stdio.h>
 int main()
 {
-    int n = 0;
-    scanf("%d", &n);
-    step(n);
+    int num = 0;
+    double sum = 0;
+    int arr[5] = { 0 };
+    int sz = sizeof(arr)/sizeof(arr[0]);
+    for (int i = 0; i < sz; i++)
+        scanf("%d", &arr[i]);
+    for (int i = 0; i < sz; i++)
+        sum = sum + arr[i];
+    double Average = sum / sz;
+    for (int i = 0; i < sz; i++)
+    {
+        if (arr[i] > Average)//超过平均分
+            num++;
+    }
+    printf("%.1lf\n%d", Average, num);
     return 0;
 }
