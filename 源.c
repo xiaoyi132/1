@@ -1,59 +1,135 @@
 #define _CRT_SECURE_NO_WARNINGS
-//判断完全数
+
 //#include<stdio.h>
-//#include<math.h>
+//	int main()
+//	{
+//		int v, t;
+//		for (int i = 0; i < 2; i++)
+//		{
+//			scanf("%d %d", &v, &t);
+//			printf("%d\n", v * 2 * t);
+//		}
+//		return 0;
+//	}
+//
+//#include<stdio.h>
+//int step(int x, int y)
+//{
+//	if (y == 0)
+//		return x;
+//	else
+//		return step(y, x % y);
+//}
+//int main()
+//{
+//	int m = 0, n = 0;
+//	scanf("%d %d", &m, &n);
+//	int s = step(m, n);
+//	printf("%d", (m * n) / s);
+//	return 0;
+//}
+//int Max(int x, int arr[])
+//{
+//    for (int i = 1; i < n; i++)
+//    {
+//        x = arr[i];
+//        if (x > arr[i])
+//            continue;
+//        else
+//            x = arr[i];
+//    }
+//    return x;
+//}
+
+//#include<stdio.h>
 //int main()
 //{
 //    int n = 0;
-//    int x1 = 0, x2 = 0;
-//    int sum = 1;
 //    scanf("%d", &n);
-//    for (int i = 2; i <= sqrt(n); i++)
+//    int arr[100] = { 0 };
+//    for (int i = 0; i < n; i++)
 //    {
-//        if (n % i == 0)
-//        {
-//            x1 = i;
-//            x2 = n / i;
-//        }
-//        sum = sum + x1 + x2;
-//        x1 = 0;
-//        x2 = 0;
+//        scanf("%d", &arr[i]);
 //    }
-//    if (sum == n)
-//        printf("Yes");
+//    int x1 = arr[0];
+//    for (int i = 1; i < n; i++)
+//    {
+//        if (x1 > arr[i])
+//            continue;
+//        else
+//            x1 = arr[i];
+//    }
+//    int x2 = arr[0];
+//    for (int i = 1; i < n; i++)
+//    {
+//        if (x2 < arr[i])
+//            continue;
+//        else
+//            x2 = arr[i];
+//    }
+//    int max = x1, min = x2;
+//    int sum = 0;
+//    for (int i = 0; i < n; i++)
+//    {
+//        sum = sum + arr[i];
+//    }
+//    double average = (double)(sum - max - min) / (n - 2);
+//    printf("%.1lf", average);
+//    return 0;
+//}
+//#include<stdio.h>
+//int main()
+//{
+//	int a[10] = {0};
+//	for (int i = 0; i < 10; i++)
+//	{
+//		scanf("%d", &a[i]);
+//	}
+//	for (int i = 9; i >= 0; i--)
+//	{
+//		printf("%d", a[i]);
+//	}
+//	return 0;
+//}
+
+
+//int getMax(int x, int y)
+//{
+//    if (x > y)
+//        return x;
 //    else
-//        printf("No");
+//        return y;
+//}
+//int main()
+//{
+//    int a[10], max, i;
+//    for (i = 0; i < 10; i++)
+//        scanf("%d", &a[i]);
+//    max = a[0];
+//    for (i = 1; i < 10; i++)
+//        max = getMax(max, a[i]);
+//    printf("The max integer is %d\n", max);
 //    return 0;
 //}
 
-//查找班级里不及格的人员
-#include<stdio.h>
-int main()
-{
-    int flag = 1;
-    int arr[10] = { 0 };
-    for (int i = 0; i < 10; i++)
-    {
-        scanf("%d", &arr[i]);
-    }
-    for (int i = 0; i < 10; i++)
-    {
-        switch (arr[i] / 10)
-        {
-        case 10:
-        case 9:
-        case 8:
-        case 7:
-        case 6:
-            break;
-        default:
-        {
-            printf("%d ", arr[i]);
-            flag = 0;
-        }
-        }
-    }
-    if (flag == 1)
-        printf("ALL Pass!");
-    return 0;
-}
+//unsigned int num(unsigned int n)
+//{
+//	if (n < 10)
+//		return n;
+//	else
+//		return num(n % 10);		
+//}
+//
+//#include<stdio.h>
+//int main()
+//{
+//	unsigned int x = 0;
+//	scanf("%u", &x);
+//	for (;x > 0;x = x/10)
+//	{
+//		unsigned int y = num(x);
+//		printf("%u ", y);
+//	}
+//
+//	return 0;
+//}
