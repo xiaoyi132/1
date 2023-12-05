@@ -16,7 +16,7 @@ void menu()
 
 
 //生成随机数字函数
-void game()
+game()
 {
 	
 	int ret = (rand() % 100);//生成数字范围为1 ~ 100;
@@ -36,12 +36,12 @@ void game()
 		{
 			printf("输小了\n");
 		}
-	} while (1);
+	} while (ret != num);
 }
 
 int main()
 {
-	srand((double)time(NULL));
+	srand((unsigned int)time(NULL));
 	do
 	{
 		int n = 0;
