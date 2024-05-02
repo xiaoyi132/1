@@ -60,12 +60,13 @@ void HeapPop(Heap* php)
 
 }
 
-void HeapSort(Heap* php)	//降序用小堆,升序用大堆
+void HeapSort(Heap* php)	//(建堆后使用)	降序用小堆,升序用大堆
 {
 	for (int cur = php->_size - 1;cur > 0;--cur)
 	{
 		Swap(&php->_a[0], &php->_a[cur]);
 		HeapDown(php, cur, 0);
+		//排序后打印数组
 		for (int i = 0; i < php->_size; i++)
 			printf("%d ", php->_a[i]);
 		printf("\n");
