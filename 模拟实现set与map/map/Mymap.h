@@ -1,43 +1,52 @@
 #pragma once
 #include"RBTree.h"
 namespace lixixi {
-
-
-
-	template<class K,class V>
+	template<class K,class T>
 	class map {
-		template<class K, class V>
+		template<class K, class T>
 		struct KeyofValue {
-			const K& operator() (const pair<K, V>& kv)
+			const K& operator() (const pair<K, T>& kv)
 			{
 				return kv.first;
 			}
 		};
-		typedef RBTree<K, pair<K, V>, KeyofValue<K,V>> RBTree;
+		typedef RBTree<K, pair<K, T>, KeyofValue<K,T>> RBTree;
 	public:
 		typedef typename RBTree::iterator iterator;
-		void Insert(pair<K,V> kv)
+		void Insert(const pair<K,T>& kv)
 		{
-			_root.Insert(kv);
+			_tree.Insert(kv);
 		}
 
 		iterator begin()
 		{
-			return _root.begin();
+			return _tree.begin();
 		}
 
 		iterator end()
 		{
-			return _root.end();
+			return _tree.end();
+		}
+
+		iterator find(const K& key)
+		{
+			return _tree.find(key);
+		}
+
+		///[]
+		T& operator[](const K& key)
+		{
+			pair<iterator, bool> retp = _tree.Insert(make_pair(key, T()));
+			return retp.first->second;
 		}
 
 		void InOrder()
 		{
-			_root.InOrder();
+			_tree.InOrder();
 		}
 
 	private:
-		RBTree _root;
+		RBTree _tree;
 	};
 
 }

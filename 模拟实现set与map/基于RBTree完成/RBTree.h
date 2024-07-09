@@ -24,7 +24,7 @@ struct RBTreeNode {
 	RBTreeNode* _right;
 	color _color;
 };
-
+///迭代器
 template<class V>
 struct RBTree_Iterator {
 	typedef RBTreeNode<V> Node;
@@ -66,7 +66,6 @@ struct RBTree_Iterator {
 		return *this;
 	}
 
-///待拓展
 	Self& operator--()
 	{
 		Node* cur = _node;
@@ -112,14 +111,14 @@ public:
 	RBTree()
 		:_root(nullptr){}
 
-	void Insert(V kv)
+	pair<iterator,bool> Insert(const V& kv)
 	{
 		//同正常搜索二叉树一样的插入操作
 		if (_root == nullptr)
 		{
 			_root = new Node(kv);
 			_root->_color = Black;
-			return;
+			return make_pair(iterator(_root),true);
 		}
 
 		KeyofValue Kofv;
@@ -138,9 +137,10 @@ public:
 				cur = cur->_right;
 			}
 			else
-				return;
+				return make_pair(iterator(cur), false);
 		}
 		cur = new Node(kv);
+		Node* newNode = cur;
 		if (Kofv(parent->Data) > Kofv(cur->Data))
 		{
 			parent->_left = cur;
@@ -188,7 +188,7 @@ public:
 					R_Rotate(grandfather);
 					grandfather->_color = Red;
 					parent->_color = Black;
-					return;
+					return make_pair(iterator(newNode), true);
 				}
 			}
 			else//父亲节点在爷爷节点的右边
@@ -212,13 +212,56 @@ public:
 					L_Rotate(grandfather);
 					parent->_color = Black;
 					grandfather->_color = Red;
-					return;
+					return make_pair(iterator(newNode), true);
 				}
 			}
 			_root->_color = Black;
 		}
+		return make_pair(iterator(newNode), true);
 	}
 
+	iterator find(const K& key)
+	{
+		KeyofValue Kofv;
+		Node* cur = _root;
+		while (cur)
+		{
+			if (Kofv(cur->Data) > key)
+			{
+				cur = cur->_left;
+			}
+			else if (Kofv(cur->Data) < key)
+			{
+				cur = cur->_right;
+			}
+			else
+				return iterator(cur);
+		}
+		return end();
+	}
+
+
+	///迭代器实现
+	iterator begin()
+	{
+		Node* cur = _root;
+		while (cur && cur->_left)
+			cur = cur->_left;
+		return iterator(cur);
+	}
+
+	iterator end()
+	{
+		return iterator(nullptr);
+	}
+
+	///中序遍历
+	void InOrder()
+	{
+		_InOrder(_root);
+	}
+
+private:
 	//左单旋情况
 	void L_Rotate(Node* parent)
 	{
@@ -278,29 +321,8 @@ public:
 		parent->_left = SubLR;
 
 	}
-
-	///迭代器实现
-	iterator begin()
-	{
-		Node* cur = _root;
-		while (cur && cur->_left)
-			cur = cur->_left;
-		return iterator(cur);
-	}
-
-	iterator end()
-	{
-		return iterator(nullptr);
-	}
-
-	///中序遍历
-	void InOrder()
-	{
-		_InOrder(_root);
-	}
-
-private:
-	void _InOrder(Node* root)
+///中序遍历子函数
+	void _InOrder(const Node*& root)
 	{
 		if (root == nullptr)
 			return;
@@ -309,5 +331,6 @@ private:
 		cout << kofv(root->Data)<< " ";
 		_InOrder(root->_right);
 	}
+///成员变量
 	Node* _root;
 };
