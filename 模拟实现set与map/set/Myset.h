@@ -18,27 +18,33 @@ namespace lixixi {
 		typedef RBTree<K, K, KofV<K>> RBTree;
 	public:
 		typedef typename RBTree::iterator iterator;
-		void Insert(K key)
+		void Insert(const K& key)
 		{
-			_root.Insert(key);
+			_tree.Insert(key);
 		}
 	
 		iterator begin()
 		{
-			return _root.begin();
+			return _tree.begin();
 		}
 
 		iterator end()
 		{
-			return _root.end();
+			return _tree.end();
+		}
+
+		iterator find(const K& key)
+		{
+			return _tree.find(key);
 		}
 
 		void InOrder()
 		{
-			_root.InOrder();
+			_tree.InOrder();
 		}
+
 	private:
-		RBTree _root;
+		RBTree _tree;
 	};
 
 }
